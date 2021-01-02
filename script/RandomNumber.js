@@ -10,26 +10,30 @@ function createRandom(){
 startBtn.addEventListener('click', createRandom );
 
 
-startBtn.addEventListener('click', function(){
-    const classArr = document.getElementsByClassName('Box');
-    console.log(classArr.length)
-    for (let k = 0 ; k < classArr.length ; k++ ){
-        classArr[k].addEventListener('click', function(){
-            console.log('1')
-            if(classArr[k].backgroundColor === 'white'){
+function playGame(arr){
+    for (let k = 0 ; k < arr.length ; k++ ){
+        arr[k].addEventListener('click', function(){
+            // if(arr[k].backgroundColor === 'white'){
                 for (let i=0;i<RandomArr.length;i++){
                     if (RandomArr[i] === k){
-                        this.style.backgroundColor = 'yellow';
+                        arr[k].style.backgroundColor = 'yellow';
                     }else{
-                        this.style.backgroundColor = 'skyblue';
+                        arr[k].style.backgroundColor = 'skyblue';
                     }
                 }
-            }else{
-                alert('이미 누른 곳입니다.');
-            }
+            // }else{
+            //     alert('이미 누른 곳입니다.');
+            // }
         })
     }
-});
+}
+
+let classArr;
+startBtn.addEventListener('click', function(){
+    classArr = document.getElementsByClassName('Box');
+    console.log(classArr.length)
+    playGame(classArr);
+})
 
 function resetGame(){
     RandomArr = [];
