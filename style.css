@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+    color:white;
+}
+.inlineBlock{
+     display:inline-block;
+}
+.numBlock{
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 100px;
+}
+.Box{
+    margin:3px 5px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    cursor: pointer;
