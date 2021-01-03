@@ -3,7 +3,7 @@ function createRandom(){
     const countValue = document.getElementById('count').value;
     const widthValue = document.getElementById('width').value;
     const heightValue = document.getElementById('height').value;
-    for (let i=0;i<countValue;i++){
+    while (RandomArr.length<countValue){
         const random = Math.floor(Math.random() * widthValue * heightValue)
         let chk = 1;
         for (let i=0;i<RandomArr.length;i++){
@@ -15,7 +15,7 @@ function createRandom(){
             RandomArr.push(random)
         }
     }
-    console.log(RandomArr)
+    console.log(RandomArr);
 }
 startBtn.addEventListener('click', createRandom );
 
