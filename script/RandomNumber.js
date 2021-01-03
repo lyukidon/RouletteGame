@@ -4,8 +4,18 @@ function createRandom(){
     const widthValue = document.getElementById('width').value;
     const heightValue = document.getElementById('height').value;
     for (let i=0;i<countValue;i++){
-        RandomArr.push(Math.floor(Math.random() * widthValue * heightValue))
+        const random = Math.floor(Math.random() * widthValue * heightValue)
+        let chk = 1;
+        for (let i=0;i<RandomArr.length;i++){
+            if (random === RandomArr[i]){
+                chk = 0;
+            }
+        }
+        if (chk === 1){
+            RandomArr.push(random)
+        }
     }
+    console.log(RandomArr)
 }
 startBtn.addEventListener('click', createRandom );
 
@@ -14,11 +24,10 @@ function playGame(arr){
     for (let k = 0 ; k < arr.length ; k++ ){
         arr[k].addEventListener('click', function(){
             // if(arr[k].backgroundColor === 'white'){
+                arr[k].style.backgroundColor = 'skyblue';
                 for (let i=0;i<RandomArr.length;i++){
                     if (RandomArr[i] === k){
                         arr[k].style.backgroundColor = 'yellow';
-                    }else{
-                        arr[k].style.backgroundColor = 'skyblue';
                     }
                 }
             // }else{
