@@ -1,4 +1,4 @@
-function CreateDiv(){
+function createTable(){
     const widthValue = document.getElementById('width').value;
     const heightValue = document.getElementById('height').value;
     //테이블 없애는 코드
@@ -17,4 +17,4 @@ function CreateDiv(){
         gameTable.appendChild(div);
     }
 }
-startBtn.addEventListener('click', CreateDiv );
+startBtn.addEventListener('click', createTable );

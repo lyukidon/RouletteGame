@@ -38,12 +38,3 @@ startBtn.addEventListener('click', function(){
     BoxArr = document.getElementsByClassName('Box');
     playGame(BoxArr);
 })
-
-function resetGame(){
-    RandomArr = [];
-    const gameTable = document.getElementById('gameTable');
-    while(gameTable.hasChildNodes()){
-        gameTable.removeChild(gameTable.firstChild); 
-}
-}
-resetBtn.addEventListener( 'click', resetGame );
