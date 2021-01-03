@@ -26,7 +26,8 @@ function playGame(arr){
             arr[k].style.backgroundColor = 'skyblue';
             for (let i=0;i<RandomArr.length;i++){
                 if (RandomArr[i] === k){
-                    arr[k].style.backgroundColor = 'yellow';
+                    arr[k].style.backgroundColor = 'red';
+                    alert('당첨되었습니다');
                 }
             }
         })
