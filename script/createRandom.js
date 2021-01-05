@@ -1,5 +1,6 @@
 let RandomArr = [];
 function createRandom(){
+    RandomArr = [];
     const countValue = document.getElementById('count').value;
     const widthValue = document.getElementById('width').value;
     const heightValue = document.getElementById('height').value;
