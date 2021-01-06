@@ -19,16 +19,23 @@ function createRandom(){
 }
 startBtn.addEventListener('click', createRandom );
 
-
+let clickCount = 0;
 function playGame(arr){
     for (let k = 0 ; k < arr.length ; k++ ){
         arr[k].addEventListener('click', function(){
-            arr[k].style.backgroundColor = 'skyblue';
-            for (let i=0;i<RandomArr.length;i++){
-                if (RandomArr[i] === k){
-                    arr[k].style.backgroundColor = 'red';
-                }
-            }
+                
+                for (let i=0;i<RandomArr.length;i++){
+                    if (RandomArr[i] === k){
+                        arr[k].style.backgroundColor = 'red';
+                        if(arr[k].style.backgroundColor == 'red'){
+                            alert('꽝입니다.');
+                            createRandom();
+                            break;
+                        }
+                    }else{
+                        arr[k].style.backgroundColor = 'skyblue';
+                    }
+                }     
         })
     }
 }
